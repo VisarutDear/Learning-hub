@@ -8,7 +8,7 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 
-function HomeAuth() {
+function MycardPage() {
     const createData = (name: string, canplay: boolean) => {
         return { name, canplay };
     }
@@ -20,8 +20,8 @@ function HomeAuth() {
     ];
     return (<>
         <div>
-            <h1>HomeAuth</h1>
-            <button><a href="http://localhost:3000/HomeAuth/mycard">Mycard</a></button>
+            <h1>Mycard</h1>
+            <button><a href="http://localhost:3000/HomeAuth">Home</a></button>
             <button style={{ position: 'absolute', right: 0 }}><a href="http://localhost:3000">Create</a></button>
             <button><a href="http://localhost:3000">logout</a></button>
             <TableContainer component={Paper}>
@@ -30,6 +30,7 @@ function HomeAuth() {
                         <TableRow>
                             <TableCell style={{ fontWeight: 'bold', textDecoration: 'underline' }}>Flash Card</TableCell>
                             <TableCell style={{ fontWeight: 'bold', textDecoration: 'underline' }} align="right">Play</TableCell>
+                            <TableCell style={{ fontWeight: 'bold', textDecoration: 'underline' }} align="right">Edit</TableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
@@ -39,6 +40,7 @@ function HomeAuth() {
                                     {row.name}
                                 </TableCell>
                                 <TableCell align="right"><button>Play</button></TableCell>
+                                <TableCell align="right"><button>Edit</button></TableCell>
                             </TableRow>
                         ))}
                     </TableBody>
@@ -49,4 +51,4 @@ function HomeAuth() {
     );
 }
 
-export default HomeAuth;
+export default MycardPage;

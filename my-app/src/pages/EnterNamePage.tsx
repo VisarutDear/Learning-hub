@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Route, Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { TextField } from '@material-ui/core';
-import axios from 'axios';
 
 const Header = styled.h1`
     color : red;
@@ -19,11 +18,7 @@ const ButtonStyled = styled.button`
     paddingtop : 8px;
 `;
 
-function Home() {
-
-    const getData = (e: any) => {
-        console.log(e.target.value);
-    }
+function EnterNamePage() {
     return (
         <CenterDiv>
             <Header>
@@ -31,19 +26,15 @@ function Home() {
             </Header>
             <div>
                 <TextField
-                    label='Enter Pin'
+                    label='Enter Name'
                     color='secondary'
-                    variant='outlined'
-                    onChange={getData}>
+                    variant='outlined'>
                 </TextField>
             </div>
-            <Link to="/enterName">
-                <ButtonStyled>ENTER</ButtonStyled>
-            </Link>
-            <Link to="/HomeAuth">Login</Link>
-        </CenterDiv >
+            <ButtonStyled>ENTER</ButtonStyled>
+        </CenterDiv>
     );
 
 }
 
-export default Home;
+export default EnterNamePage;
